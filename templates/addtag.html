@@ -1,0 +1,13 @@
+{% include 'head.html' %}
+<div class="container">
+    <h2>添加扫描节点（sqlmap）</h2>
+    <p>添加sqlmapapi的节点</p>
+    <div class="form-group">
+        <form action="/add_scanner/" method="post">
+            {#                <label for="comment" style="text-align: center">内容</label>#}
+            <textarea class="form-control" rows="5" id="comment" name="comment">{{ current_scanner }}</textarea>
+            <input class="btn" type="submit" name="submit"></input>
+        </form>
+    </div>
+</div>
+{% include "foot.html" %}

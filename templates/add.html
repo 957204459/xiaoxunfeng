@@ -1,0 +1,23 @@
+{% include "head.html" %}
+<div class="container">
+    <h2>1. 手动添加资产</h2>
+    <p>一行一个网站ε٩(๑> ₃ <)۶з</p>
+    <div class="form-group">
+        <form action="/add" method="post">
+            {#                <label for="comment" style="text-align: center">内容</label>#}
+            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+            <input class="btn" type="submit" name="submit"></input>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <h2>2. 从帅核桃的子域名查找系统中导入资产</h2>
+    <div class="form-group">
+        <form class="form-search" action="#">
+            <input class="input-medium search-query" type="text" name="domain"/>
+            <button class="btn" type="submit" name="">查找</button>
+        </form>
+    </div>
+</div>
+
+{% include "foot.html" %}

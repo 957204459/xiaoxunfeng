@@ -1,0 +1,56 @@
+{% include 'head.html' %}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <h1>
+                {{ Title }}
+            </h1>
+            <form class="form-search" action="/search">
+                <input class="input-medium search-query" type="text" name="domain"/>
+                <button class="btn" type="submit" name="submit">域名查找</button>
+            </form>
+            <p>
+                一共有{{ count }}条关于{{ key }}数据
+            </p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        标题
+                    </th>
+                    <th>
+                        网址
+                    </th>
+                    <th>
+                        IP
+                    </th>
+                    <th>
+                        页面hash
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in host %}
+                    <tr>
+                        <td>
+                            {% if i.title %}
+                                {{ i.title }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="/info/{{ i._id }}">{{ i.target }}</a>
+                        </td>
+                        <td>
+                            {{ i.ip }}
+                        </td>
+                        <td>
+                            {{ i.hash }}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% include "foot.html" %}
